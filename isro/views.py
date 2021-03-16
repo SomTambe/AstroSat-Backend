@@ -21,10 +21,23 @@ def index(request):
 
 class CardView(APIView):
     def get(self, request):
-        return HttpResponse("Bad Request.",status=400)
+        return HttpResponse("Bad Request.", status=400)
     
     def post(self, request):
-        # try:
         s = make_card(request) # got the source we wanted
         s = SourceSerializer(s)
         return Response(s.data, status=status.HTTP_200_OK)
+
+class AddSource(APIView):
+    def get(self, request):
+        return HttpResponse("Bad Request.", status=400)
+
+    def post(self, request):
+        return add_src(request)
+
+class AddPub(APIView):
+    def get(self, request):
+        return HttpResponse("Bad Request.", status=400)
+    
+    def post(self, request):
+        return add_pub(request)
