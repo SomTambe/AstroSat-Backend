@@ -22,7 +22,7 @@ Response:{'id',
 ```
 URL: /isro/addSrc/
 Method: POST
-parameters: {'name','ra','dec'}
+parameters: {'name','ra','dec','astrosat'}
 
 Successful: 200_OK
 Unsuccessful: If source with the same name already exists -> 406_NOT_ACCEPTABLE

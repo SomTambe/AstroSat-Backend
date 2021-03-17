@@ -41,3 +41,10 @@ class AddPub(APIView):
     
     def post(self, request):
         return add_pub(request)
+
+class GetData(APIView):
+    def get(self, request):
+        return send_data(request)
+
+    def post(self, request):
+        return HttpResponse("Bad Request.", status=400)

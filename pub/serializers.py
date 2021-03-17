@@ -4,4 +4,4 @@ from .models import pubs
 class PubSerializer(serializers.ModelSerializer):
     class Meta:
         model = pubs
-        exclude = ('sources',)
+        exclude = ('id','sources',)

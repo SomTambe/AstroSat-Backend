@@ -5,6 +5,7 @@ from django.shortcuts import get_object_or_404
 from rest_framework.response import Response
 from rest_framework import permissions, status
 from pub.models import *
+from .serializers import *
 
 def make_card(request):
     # assuming request is a POST request.
@@ -14,16 +15,17 @@ def make_card(request):
 
 def add_src(request):
     # assuming request is a POST request.
-    # fields = {'name','ra','dec'}
+    # fields = {'name','ra','dec','astrosat'}
     body = request.POST.dict()
     try:
         name = body['name']
         ra = body['ra']
         dec = body['dec']
+        astrosat = body['astrosat']
     except KeyError:
         return Response(status=status.HTTP_404_NOT_FOUND)
     try:
-        src = source(name=name, ra=ra, dec=dec)
+        src = source(name=name, ra=ra, dec=dec, astrosat=astrosat)
         src.save()
         return Response(status=status.HTTP_201_CREATED)
     except:
@@ -46,4 +48,10 @@ def add_pub(request):
         src = get_object_or_404(source, name=s)
         pub.add_src(src)
     return Response(status=status.HTTP_201_CREATED)
+
+def send_data(request):
+    # assuming request is a GET request.
+    # returning parameters for a source = [{'name','ra','dec','astrosat'}, ...]
+    ser = [GetSource(s).data for s in source.objects.all()]
+    return Response(ser, status=status.HTTP_200_OK)
 

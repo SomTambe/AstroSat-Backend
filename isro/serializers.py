@@ -10,3 +10,9 @@ class SourceSerializer(serializers.ModelSerializer):
         model = source
         fields = '__all__'
         depth=1
+
+class GetSource(serializers.ModelSerializer):
+    class Meta:
+        model = source
+        fields = ('ra','dec','name','astrosat')
+
