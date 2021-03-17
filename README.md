@@ -2,6 +2,17 @@
 Inter IIT Tech Meet ISRO Challenge IIT Kanpur backend repo
 
 ## API endpoints
+### Fetch Data API
+```
+URL: /isro/getdata/
+Method: GET
+parameters: nothing
+
+Successful: 200_OK
+Unsuccessful: 404_NOT_FOUND
+
+Response: [{'name','ra','dec','astrosat'}, ...]
+```
 ### View Card API
 ```
 URL: /isro/card/
