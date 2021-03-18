@@ -17,7 +17,7 @@ Response: [{'name','ra','dec','astrosat'}, ...]
 ```
 URL: /isro/card/
 Method: POST
-parameters: {'name'} # which is the name of the source we want. source name taken as unique id.
+parameters: {'ra','dec'} 
 
 Successful: 200_OK
 Unsuccessful: 404_NOT_FOUND

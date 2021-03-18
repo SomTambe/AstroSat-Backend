@@ -9,8 +9,9 @@ from .serializers import *
 
 def make_card(request):
     # assuming request is a POST request.
+    # fields = {'ra','dec'}
     body = request.POST.dict()
-    src = get_object_or_404(source, name=body['name'])
+    src = get_object_or_404(source, ra=body['ra'], dec=body['dec'])
     return src
 
 def add_src(request):

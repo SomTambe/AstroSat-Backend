@@ -8,7 +8,7 @@ class SourceSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = source
-        fields = '__all__'
+        exclude = ('id',)
         depth=1
 
 class GetSource(serializers.ModelSerializer):

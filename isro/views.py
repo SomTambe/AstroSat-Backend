@@ -17,8 +17,6 @@ from .serializers import *
 def index(request):
     return HttpResponse("Hello, world. You're at the ISRO index.")
 
-# @api_view(['POST'])
-
 class CardView(APIView):
     def get(self, request):
         return HttpResponse("Bad Request.", status=400)
