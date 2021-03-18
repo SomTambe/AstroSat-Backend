@@ -22,8 +22,7 @@ parameters: {'ra','dec'}
 Successful: 200_OK
 Unsuccessful: 404_NOT_FOUND
 
-Response:{'id',
-          'name',
+Response:{'name',
           'ra',
           'dec',
           'pubs':[{'id','title','link'},...]
