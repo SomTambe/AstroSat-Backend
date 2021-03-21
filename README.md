@@ -23,7 +23,6 @@ Successful: 200_OK
 Unsuccessful: 404_NOT_FOUND
 
 Response:{'name',
-          'astrosat',
           'ra',
           'dec',
           'pubs':[{'id','title','link'}, ...]
