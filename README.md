@@ -51,3 +51,18 @@ Unsuccessful: 404_NOT_FOUND
 
 No response field. Publication is added to the database if operation is successful.
 ```
+<!-- try:
+    x=json.loads(cat['Publications'][i].replace("'",'\"'))
+except:
+    continue
+#print('x=',x)
+if type(x) is list:
+    #print(x)
+    for p in x:
+        if p[0] not in publist:
+            publist[p[0]]={}
+            publist[p[0]]['link']=''
+            publist[p[0]]['sources']=[]
+        else:
+            publist[p[0]]['sources'].append(cat['Source_Name'][i])
+            publist[p[0]]['link']=p[1] -->
