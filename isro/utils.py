@@ -11,6 +11,9 @@ def make_card(request):
     # assuming request is a POST request.
     # fields = {'ra','dec'}
     body = request.POST.dict()
+    for b in body:
+        body=json.loads(b)
+    print("body=",body)
     src = get_object_or_404(source, ra=body['ra'], dec=body['dec'])
     return src
 
