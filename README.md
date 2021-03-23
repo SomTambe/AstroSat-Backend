@@ -11,7 +11,8 @@ parameters: nothing
 Successful: 200_OK
 Unsuccessful: 404_NOT_FOUND
 
-Response: [{'name','ra','dec','astrosat'}, ...]
+Response: [{'name','ra','dec','astrosat','dateobs','timeobs','srctype','prop_id',
+          'obs_id','tgt_id','instrument','porb','flux','pubs':[{'id','title','link'}, ...]}, ...]
 ```
 ### View Card API
 ```
