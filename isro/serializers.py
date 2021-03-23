@@ -18,7 +18,7 @@ class SourceSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = source
-        exclude = ('id')
+        exclude = ('id',)
         depth=1
 
 """
