@@ -37,8 +37,8 @@ class source(models.Model):
     obs_id = models.CharField(max_length=100, default='Not Available')
     tgt_id = models.CharField(max_length=15, default='Not Available')
     instrument = models.CharField(max_length=100, default='Not Available')
-    porb = models.CharField(max_length=100, default='Not Available')
-    flux = models.FloatField(null=True, blank=True, default=None)
+    porb = models.CharField(max_length=100, default='Not Available') # unit = days
+    flux = models.FloatField(null=True, blank=True, default=None) # Average X-ray flux (2-10keV), unit = MicroJansky
 
     def __str__(self):
         return self.name

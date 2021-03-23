@@ -39,17 +39,28 @@ Arguments:
 """
 def add_src(request):
     # assuming request is a POST request.
-    # fields = {'name','ra','dec','astrosat'}
     body = request.POST.dict()
     try:
         name = body['name']
         ra = body['ra']
         dec = body['dec']
         astrosat = body['astrosat']
+        dateobs = body['dateobs']
+        timeobs = body['timeobs']
+        srctype = body['srctype']
+        prop_id = body['prop_id']
+        obs_id = body['obs_id']
+        tgt_id = body['tgt_id']
+        instrument = body['instrument']
+        porb = body['porb']
+        flux = body['flux']
     except KeyError:
         return Response(status=status.HTTP_404_NOT_FOUND)
     try:
-        src = source(name=name, ra=ra, dec=dec, astrosat=astrosat)
+        src = source(name=name, ra=ra, dec=dec, astrosat=astrosat, 
+                    dateobs=dateobs, timeobs=timeobs, srctype=srctype,
+                    prop_id=prop_id, obs_id=obs_id, tgt_id=tgt_id,
+                    instrument=instrument, porb=porb, flux=flux)
         src.save()
         return Response(status=status.HTTP_201_CREATED)
     except:
@@ -98,4 +109,3 @@ def send_data(request):
     # returning parameters for a source = [{'name','ra','dec','astrosat'}, ...]
     ser = [SourceSerializer(s).data for s in source.objects.all()]
     return Response(ser, status=status.HTTP_200_OK)
-
