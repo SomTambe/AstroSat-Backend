@@ -81,7 +81,7 @@ for i in cat.index:
         x=json.loads(cat['Publications'][i].replace("'",'\"'))
     except:
         continue
-    #print('x=',x)
+    print('x=',x)
     if type(x) is list:
         #print(x)
         for p in x:
@@ -90,7 +90,7 @@ for i in cat.index:
                 publist[p[0]]['link']=''
                 publist[p[0]]['sources']=[]
             else:
-                publist[p[0]]['sources'].append(cat['Source_Name'][i])
+                publist[p[0]]['sources'].append(cat['SIMBAD_Name'][i])
                 publist[p[0]]['link']=p[1]
 for i in cat.index:
     try:
