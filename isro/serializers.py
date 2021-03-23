@@ -8,7 +8,7 @@ class SourceSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = source
-        exclude = ('id','astrosat')
+        exclude = ('id')
         depth=1
 
 class GetSource(serializers.ModelSerializer):

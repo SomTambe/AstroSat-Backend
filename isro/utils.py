@@ -56,6 +56,6 @@ def add_pub(request):
 def send_data(request):
     # assuming request is a GET request.
     # returning parameters for a source = [{'name','ra','dec','astrosat'}, ...]
-    ser = [GetSource(s).data for s in source.objects.all()]
+    ser = [SourceSerializer(s).data for s in source.objects.all()]
     return Response(ser, status=status.HTTP_200_OK)
 
