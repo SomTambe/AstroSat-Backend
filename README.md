@@ -1,6 +1,20 @@
 # IsroApp
 Inter IIT Tech Meet ISRO Challenge IIT Kanpur backend repo
 
+## How to host
+Installing Django and Django REST API Framework -
+```python
+pip install Django
+pip install djangorestframework
+```
+Hosting the server -
+```python
+# make sure you are in this repository
+python manage.py makemigrations
+python manage.py migrate
+python manage.py runserver
+```
+
 ## API endpoints
 ### Fetch Data API
 ```
@@ -88,7 +102,7 @@ for i in cat.index:
             if p[0] not in publist:
                 publist[p[0]]={}
                 publist[p[0]]['link']=''
-                publist[p[0]]['sources']=[]
+                publist[p[0]]['sources']=[cat['SIMBAD_Name'][i]]
             else:
                 publist[p[0]]['sources'].append(cat['SIMBAD_Name'][i])
                 publist[p[0]]['link']=p[1]
